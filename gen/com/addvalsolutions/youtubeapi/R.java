@@ -182,19 +182,16 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020018;
     }
     public static final class id {
-        public static final int action_settings=0x7f05000c;
+        public static final int action_settings=0x7f050009;
         public static final int hybrid=0x7f050004;
         public static final int img=0x7f050007;
-        public static final int img2=0x7f05000a;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int row=0x7f050006;
-        public static final int row2=0x7f050009;
         public static final int satellite=0x7f050002;
         public static final int tableLayout1=0x7f050005;
         public static final int terrain=0x7f050003;
         public static final int tv_name1=0x7f050008;
-        public static final int tv_name2=0x7f05000b;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
