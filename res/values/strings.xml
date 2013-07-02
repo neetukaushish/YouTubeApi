@@ -4,6 +4,7 @@
     <string name="app_name">YouTubeApi</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="atv_hint">Enter content to search</string>
+    <string name="tv_hint">Enter content to search</string>
+    <string name="btn_search">Search</string>
 
 </resources>

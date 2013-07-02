@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ public class MainActivity extends Activity {
 
 	TableLayout tb;
 	ImageView img;
+	TableRow tr;
 	TextView tv;
 	String title="cars";
 	@Override
@@ -44,10 +47,12 @@ public class MainActivity extends Activity {
 			JSONParser obj=new JSONParser();
 			JSONArray jsonarray=obj.getVideos(title);
 			for(int i=0;i<jsonarray.length();i++){
+				
 				View row=getLayoutInflater().inflate(R.layout.activity_main, null);
 				((TextView)row.findViewById(R.id.tv_name1)).setText(jsonarray.getJSONObject(i).getString("title"));
 				((ImageView)row.findViewById(R.id.img)).setVisibility(i);
 				tb.addView(row);
+				
 			
 			}
 		} catch (JSONException e) {
