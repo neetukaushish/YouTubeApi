@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 			    
 			    //adding each child node to HashMap key and value
 			    map.put("title", title);
-			   // map.put("sqDefault", sqDefault);
+			    map.put("sqDefault", sqDefault);
                 map.put("player", player_default);
                 
                 //adding to arraylist
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
 				final ListView lv=(ListView)findViewById(R.id.list);
 				lv.setAdapter(adapter);
 
-lv.setOnItemClickListener(new OnItemClickListener() {
+         lv.setOnItemClickListener(new OnItemClickListener() {
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View v, int position, long id) {
@@ -94,7 +94,13 @@ lv.setOnItemClickListener(new OnItemClickListener() {
 		lv.SelectedItems[i].SubItems[1].Text;*/
 		Map<String, String> map=(Map<String,String>)((ListView)lv).getItemAtPosition(position);
 		String val=map.get("player");
-		startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(val)));
+		
+		Bundle b=new Bundle();
+		b.putString("video", val);
+		Intent intent=new Intent(getApplicationContext(),SecondActivity.class);
+		intent.putExtras(b);
+		startActivity(intent);
+		//startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(val)));
 	}
 });
 				btn.setOnClickListener(new OnClickListener() {
@@ -102,7 +108,8 @@ lv.setOnItemClickListener(new OnItemClickListener() {
 					@Override
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://m.youtube.com/details?v=urHuO7Zbhhw")));
+						startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.youtube.com/watch?v=urHuO7Zbhhw&feature=youtube_gdata_player")));
+						
 					}
 				});
 				
